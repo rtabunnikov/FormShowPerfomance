@@ -53,14 +53,15 @@ namespace FormShowPerfomance {
         }
 
         void PrintResult(PerfResult result) {
-            Print(result.Name);
-            Print($"Min:    {result.Min:F3} ms");
-            Print($"Max:    {result.Max:F3} ms");
-            Print($"Avg:    {result.Mean:F3} ms");
-            Print($"Median: {result.Median:F3} ms");
+            var sb = new StringBuilder();
+            sb.Append(textBox1.Text);
+            sb.AppendLine(result.Name);
+            sb.AppendLine($"Min:    {result.Min:F3} ms");
+            sb.AppendLine($"Max:    {result.Max:F3} ms");
+            sb.AppendLine($"Avg:    {result.Mean:F3} ms");
+            sb.AppendLine($"Median: {result.Median:F3} ms");
+            textBox1.Text = sb.ToString();
         }
-
-        void Print(string text) => listBox1.Items.Add(text);
 
         private void butNoRibbon_Click(object sender, EventArgs e) {
             Measure("XtraSpreadsheet w/o ribbon", RunNoRibbon);
