@@ -15,6 +15,8 @@ namespace FormShowPerfomance {
         }
 
         private void SpreadsheetNoRibbon_Shown(object sender, EventArgs e) {
+            Invalidate(true);
+            Update();
             Close();
         }
     }

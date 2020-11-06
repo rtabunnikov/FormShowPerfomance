@@ -22,6 +22,8 @@ namespace FormShowPerfomance {
         }
 
         private void SpreadsheetRibbonRuntime_Shown(object sender, EventArgs e) {
+            Invalidate(true);
+            Update();
             Close();
         }
     }
