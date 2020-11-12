@@ -33,12 +33,14 @@
             this.butRichEditRibbonRuntime = new System.Windows.Forms.Button();
             this.butRichEditNoRibbon = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAll = new System.Windows.Forms.Button();
+            this.chkWarmUp = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // butNoRibbon
             // 
             this.butNoRibbon.Location = new System.Drawing.Point(99, 11);
-            this.butNoRibbon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butNoRibbon.Margin = new System.Windows.Forms.Padding(2);
             this.butNoRibbon.Name = "butNoRibbon";
             this.butNoRibbon.Size = new System.Drawing.Size(138, 37);
             this.butNoRibbon.TabIndex = 0;
@@ -49,7 +51,7 @@
             // butRibbonRuntime
             // 
             this.butRibbonRuntime.Location = new System.Drawing.Point(242, 11);
-            this.butRibbonRuntime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butRibbonRuntime.Margin = new System.Windows.Forms.Padding(2);
             this.butRibbonRuntime.Name = "butRibbonRuntime";
             this.butRibbonRuntime.Size = new System.Drawing.Size(138, 37);
             this.butRibbonRuntime.TabIndex = 2;
@@ -60,7 +62,7 @@
             // butRibbonDesigntime
             // 
             this.butRibbonDesigntime.Location = new System.Drawing.Point(384, 11);
-            this.butRibbonDesigntime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butRibbonDesigntime.Margin = new System.Windows.Forms.Padding(2);
             this.butRibbonDesigntime.Name = "butRibbonDesigntime";
             this.butRibbonDesigntime.Size = new System.Drawing.Size(138, 37);
             this.butRibbonDesigntime.TabIndex = 3;
@@ -74,11 +76,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(9, 130);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(583, 226);
+            this.textBox1.Size = new System.Drawing.Size(770, 226);
             this.textBox1.TabIndex = 4;
             // 
             // label1
@@ -138,15 +140,41 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(399, 13);
+            this.label3.Size = new System.Drawing.Size(755, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Push one button per application run! Copy result from text box below.";
+            this.label3.Text = "Switch OFF warm up pass and push one button per app run if you want to see cold s" +
+    "tart time (max)! Copy result from text box below.";
+            // 
+            // btnAll
+            // 
+            this.btnAll.Location = new System.Drawing.Point(526, 11);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(105, 37);
+            this.btnAll.TabIndex = 11;
+            this.btnAll.Text = "All";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // chkWarmUp
+            // 
+            this.chkWarmUp.AutoSize = true;
+            this.chkWarmUp.Checked = true;
+            this.chkWarmUp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkWarmUp.Location = new System.Drawing.Point(537, 63);
+            this.chkWarmUp.Name = "chkWarmUp";
+            this.chkWarmUp.Size = new System.Drawing.Size(94, 17);
+            this.chkWarmUp.TabIndex = 12;
+            this.chkWarmUp.Text = "Warm up pass";
+            this.chkWarmUp.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(787, 366);
+            this.Controls.Add(this.chkWarmUp);
+            this.Controls.Add(this.btnAll);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.butRichEditRibbonDesigntime);
@@ -157,7 +185,7 @@
             this.Controls.Add(this.butRibbonDesigntime);
             this.Controls.Add(this.butRibbonRuntime);
             this.Controls.Add(this.butNoRibbon);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "FormShow performance";
             this.ResumeLayout(false);
@@ -177,6 +205,8 @@
         private System.Windows.Forms.Button butRichEditRibbonRuntime;
         private System.Windows.Forms.Button butRichEditNoRibbon;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.CheckBox chkWarmUp;
     }
 }
 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FormShowPerfomance {
     public partial class Form1 : Form {
-        const int n = 30;
+        const int n = 100;
         Stopwatch sw = new Stopwatch();
 
         public Form1() {
@@ -19,6 +19,16 @@ namespace FormShowPerfomance {
         }
 
         void Measure(string name, Action action) {
+            if (chkWarmUp.Checked) {
+                // Begin warm up
+                action();
+                Application.DoEvents();
+                sw.Restart();
+                sw.Stop();
+                GC.Collect(2, GCCollectionMode.Forced);
+                // End warm up
+            }
+
             var times = new double[n];
             for (int i = 0; i < n; i++) {
                 sw.Restart();
@@ -26,6 +36,7 @@ namespace FormShowPerfomance {
                 Application.DoEvents();
                 sw.Stop();
                 times[i] = sw.Elapsed.TotalMilliseconds;
+                GC.Collect(2, GCCollectionMode.Forced);
             }
             var result = PrepareResult(name, times);
             PrintResult(result);
@@ -115,6 +126,15 @@ namespace FormShowPerfomance {
         void RichEditRunRibbonDesigntime() {
             using (var frm = new RichEditRibbonDesigntime())
                 frm.ShowDialog();
+        }
+
+        private void btnAll_Click(object sender, EventArgs e) {
+            Measure("XtraSpreadsheet w/o ribbon", RunNoRibbon);
+            Measure("XtraRichEdit w/o ribbon", RichEditRunNoRibbon);
+            Measure("XtraSpreadsheet ribbon runtime", RunRibbonRuntime);
+            Measure("XtraRichEdit ribbon runtime", RichEditRunRibbonRuntime);
+            Measure("XtraSpreadsheet ribbon designtime", RunRibbonDesigntime);
+            Measure("XtraRichEdit ribbon designtime", RichEditRunRibbonDesigntime);
         }
     }
 }
