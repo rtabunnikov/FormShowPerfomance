@@ -89,5 +89,32 @@ namespace FormShowPerfomance {
             using (var frm = new SpreadsheetRibbonDesigntime())
                 frm.ShowDialog();
         }
+
+        private void butRichEditNoRibbon_Click(object sender, EventArgs e) {
+            Measure("XtraRichEdit w/o ribbon", RichEditRunNoRibbon);
+        }
+
+        void RichEditRunNoRibbon() {
+            using (var frm = new RichEditNoRibbon())
+                frm.ShowDialog();
+        }
+
+        private void butRichEditRibbonRuntime_Click(object sender, EventArgs e) {
+            Measure("XtraRichEdit ribbon runtime", RichEditRunRibbonRuntime);
+        }
+
+        void RichEditRunRibbonRuntime() {
+            using (var frm = new RichEditRibbonRuntime())
+                frm.ShowDialog();
+        }
+
+        private void butRichEditRibbonDesigntime_Click(object sender, EventArgs e) {
+            Measure("XtraRichEdit ribbon designtime", RichEditRunRibbonDesigntime);
+        }
+
+        void RichEditRunRibbonDesigntime() {
+            using (var frm = new RichEditRibbonDesigntime())
+                frm.ShowDialog();
+        }
     }
 }
