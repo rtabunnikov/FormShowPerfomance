@@ -72,6 +72,11 @@
     <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Work\2020.2\Bin\Framework4\DevExpress.Sparkline.v20.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Spreadsheet.v20.2.Core, Version=20.2.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4">
       <Private>True</Private>
     </Reference>
